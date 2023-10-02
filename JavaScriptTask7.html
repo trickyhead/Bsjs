@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 7 - JavaScript Animation</title>
+    <style>
+      #container {
+        text-align: center;
+      }
+
+      #animatedImage {
+        max-width: 300%;
+        animation-name: moveImage;
+        animation-duration: 7s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes moveImage {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(500px);
+        }
+      }
+
+      #controlButtons {
+        margin-top: 25px;
+      }
+
+      #startAnimationButton,
+      #stopAnimationButton {
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+
+      #finishingNote {
+        text-align: center;
+        padding-top: 25rem;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        color: #0000004c;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img id="animatedImage" src="train.png" alt="Custom Animated Image" />
+      <div id="controlButtons">
+        <button id="startAnimationButton">Play</button>
+        <button id="stopAnimationButton">Stop</button>
+      </div>
+    </div>
+    <p id="finishingNote">Enjoy the animation!</p>
+
+    <script>
+      const animatedImage = document.getElementById("animatedImage");
+      const startAnimationButton = document.getElementById(
+        "startAnimationButton"
+      );
+      const stopAnimationButton = document.getElementById(
+        "stopAnimationButton"
+      );
+
+      startAnimationButton.addEventListener("click", startCustomAnimation);
+      stopAnimationButton.addEventListener("click", stopCustomAnimation);
+
+      function startCustomAnimation() {
+        animatedImage.style.animationPlayState = "running";
+      }
+
+      function stopCustomAnimation() {
+        animatedImage.style.animationPlayState = "paused";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Date and Time Display</title>
+    <style>
+      body {
+        background-color: #e0e0ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+
+      button {
+        background-color: #007acc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 18px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showDate()">Show Date</button>
+    <p id="date"></p>
+    <br />
+    <br />
+    <button onclick="showTime()">Show Time</button>
+    <p id="time"></p>
+    <script>
+      function showDate() {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        let mm = today.getMonth();
+        let dd = today.getDate();
+        if (dd < 10) dd = "0" + dd;
+        const monthNames = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        const formattedDate = dd + "/" + monthNames[mm] + "/" + yyyy;
+        document.getElementById("date").innerHTML = formattedDate;
+      }
+
+      function showTime() {
+        const currentTime = new Date();
+        document.getElementById("time").innerHTML = currentTime;
+      }
+    </script>
+  </body>
+</html>

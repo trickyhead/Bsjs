@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse Number Calculator</title>
+    <style>
+      header {
+        background-color: #fff;
+        font-family: "Arial", sans-serif;
+        color: #333;
+        padding: 20px;
+        text-align: center;
+      }
+      body {
+        background-color: #fff;
+        font-size: 20px;
+        color: #333;
+        padding: 20px;
+      }
+      input[type="number"] {
+        width: 100px;
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        color: #007bff;
+      }
+      input[type="button"] {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 10px;
+        border: none;
+        margin-left: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #calculator {
+        padding-top: 2.5rem;
+        text-align: center;
+      }
+      #result {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Number Reversal Calculator</h1>
+    </header>
+    <div id="calculator">
+      <label for="inputNumber">Enter a Number:</label>
+      <input
+        type="number"
+        id="inputNumber"
+        name="inputNumber"
+        placeholder="Enter number"
+        required
+      />
+      <input type="button" value="Calculate" onclick="calculate()" />
+    </div>
+    <p id="result"></p>
+    <script>
+      function calculate() {
+        var num1 = parseInt(document.getElementById("inputNumber").value);
+        if (!isNaN(num1)) {
+          var result = 0;
+          while (num1 > 0) {
+            let digit = num1 % 10;
+            result = result * 10 + digit;
+            num1 = Math.floor(num1 / 10);
+          }
+          document.getElementById("result").innerHTML =
+            "The Reversed number is: " + result;
+        } else {
+          document.getElementById("result").innerHTML =
+            "Please input a valid number.";
+        }
+      }
+    </script>
+  </body>
+</html>

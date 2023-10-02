@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5 My Bootstrap Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" type="text/css" href="./custom-style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Bootstrap Task Form</h2>
+
+      <form id="customForm">
+        <div class="form-table">
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="firstName" id="firstNameLabel">First Name</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span
+                  class="input-group-text"
+                  id="inputGroup-sizing-default firstNameInputGroup"
+                  ><i class="bi bi-person-fill" id="firstNameIcon"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="First Name"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="firstName"
+                />
+              </div>
+              <span class="error" id="firstNameError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="lastName" id="lastNameLabel">Last Name</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-person-fill" id="lastNameIcon"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Last Name"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="lastName"
+                />
+              </div>
+              <span class="error" id="lastNameError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="inputEmail" id="emailLabel">Email</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-envelope-fill" id="emailIcon"></i
+                ></span>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email Address"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="inputEmail"
+                />
+              </div>
+              <span class="error" id="emailError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="phoneNumber" id="phoneLabel">Phone Number</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-telephone-fill" id="phoneIcon"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="(123) 456-7890"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="phoneNumber"
+                />
+              </div>
+              <span class="error" id="phoneNumberError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="inputAddress" id="addressLabel">Address</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-house-door-fill" id="addressIcon"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Address"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="inputAddress"
+                />
+              </div>
+              <span class="error" id="inputAddressError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="inputCity" id="cityLabel">City</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-house-door-fill" id="cityIcon"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="City"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="inputCity"
+                />
+              </div>
+              <span class="error" id="inputCityError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="inputState" id="stateLabel">State</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-list-ul" id="stateIcon"></i
+                ></span>
+                <select
+                  class="form-select"
+                  aria-label="Sizing example select"
+                  aria-describedby="inputGroup-sizing-sm"
+                  id="inputState"
+                >
+                  <option selected>Select a state...</option>
+                  <option value="New York">New York</option>
+                  <option value="California">California</option>
+                  <option value="Texas">Texas</option>
+                  <option value="Florida">Florida</option>
+                  <option value="Illinois">Illinois</option>
+                </select>
+              </div>
+              <span class="error" id="inputStateError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="hostingOption" id="hostingLabel">Hosting</label>
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group-radio">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hostingOption"
+                    id="hostingYes"
+                    value="Yes"
+                    required
+                  />
+                  <label class="form-check-label" for="hostingYes">Yes</label>
+                </div>
+              </div>
+              <div class="input-group-radio">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="hostingOption"
+                    id="hostingNo"
+                    value="No"
+                    required
+                  />
+                  <label class="form-check-label" for="hostingNo">No</label>
+                </div>
+              </div>
+              <span class="error" id="hostingOptionError"></span>
+            </div>
+          </div>
+
+          <div class="form-table-row">
+            <div class="form-table-cell narrow-column">
+              <label for="projectDescription" id="descriptionLabel"
+                >Project Description</label
+              >
+            </div>
+            <div class="form-table-cell wide-column">
+              <div class="input-group input-group-sm error-input">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  ><i class="bi bi-pencil-fill" id="descriptionIcon"></i
+                ></span>
+                <textarea
+                  class="form-control"
+                  placeholder="Project Description"
+                  id="projectDescription"
+                  name="projectDescription"
+                  rows="4"
+                  required
+                ></textarea>
+              </div>
+              <span class="error" id="projectDescriptionError"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-submit btn-lg" id="submitButton">
+            Submit <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script src="./custom-script.js"></script>
+  </body>
+</html>

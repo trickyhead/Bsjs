@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    <style>
+      .form-container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 25px;
+        border: 3px solid black;
+        background-color: #efb2d0; /* Changed background color */
+        font-family: Arial, sans-serif; /* Changed font family */
+      }
+
+      .form-container h2 {
+        color: #1e3fd4; /* Changed header text color */
+        text-align: center;
+      }
+
+      .form-container label {
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      .form-container input[type="text"],
+      .form-container input[type="email"],
+      .form-container input[type="number"],
+      .form-container textarea,
+      .form-container select {
+        width: 95%;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+
+      .form-container .checkbox-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .form-container .checkbox-group input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      .form-container .strength {
+        font-size: 15px;
+        margin-left: 7px;
+        color: rgb(53, 50, 50);
+      }
+
+      .form-container .good {
+        color: rgb(255, 0, 0);
+      }
+
+      .form-container .poor {
+        color: rgb(255, 0, 0);
+      }
+
+      .form-container button {
+        padding: 10px 20px;
+        background-color: #af4c4c;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .form-container button:hover {
+        background-color: #45a049;
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <label>First Name:</label>
+      <input type="text" name="firstName" />
+      <span class="strength"></span>
+
+      <label>Last Name:</label>
+      <input type="text" name="lastName" />
+      <span class="strength"></span>
+
+      <label>Email:</label>
+      <input type="email" name="email" />
+      <span class="strength"></span>
+
+      <label>Gender:</label>
+      <input
+        type="radio"
+        name="gender"
+        value="male"
+        onclick="updateStrength(this)"
+      />
+      Male<br />
+      <input
+        type="radio"
+        name="gender"
+        value="female"
+        onclick="updateStrength(this)"
+      />
+      Female<br />
+      <input
+        type="radio"
+        name="gender"
+        value="other"
+        onclick="updateStrength(this)"
+      />
+      Other
+      <span class="strength"></span>
+
+      <label>Age:</label>
+      <input type="number" name="age" />
+      <span class="strength"></span>
+
+      <label>Phone Number:</label>
+      <input type="number" name="phoneNumber" />
+      <span class="strength"></span>
+
+      <label>Address:</label>
+      <textarea name="address" cols="50" rows="5"></textarea>
+      <span class="strength"></span>
+
+      <label>State:</label>
+      <input type="text" name="state" />
+      <span class="strength"></span>
+
+      <label>Country:</label>
+      <select>
+        <option>Select Country</option>
+        <option value="India">India</option>
+        <option value="Bangladesh">Bangladesh</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Sri Lanka">Sri Lanka</option>
+        <option value="China">China</option>
+      </select>
+      <span class="strength"></span>
+
+      <label>Languages Known:</label>
+      <div class="checkbox-group">
+        <input type="checkbox" name="telugu" onclick="updateStrength(this)" />
+        <label>Telugu</label>
+        <input type="checkbox" name="english" onclick="updateStrength(this)" />
+        <label>English</label>
+        <input type="checkbox" name="hindi" onclick="updateStrength(this)" />
+        <label>Hindi</label>
+        <input type="checkbox" name="kannada" onclick="updateStrength(this)" />
+        <label>Kannada</label>
+      </div>
+      <span class="strength"></span>
+
+      <input type="checkbox" name="declaration" />
+      <label>Hereby I declare that all the given details are true</label>
+      <span class="strength"></span>
+
+      <p>
+        Login to
+        <a href="https://ethnus.com/" target="_blank">Ethnus</a> website
+      </p>
+
+      <div style="text-align: center">
+        <button onclick="SubmitEvent()">Submit</button>
+      </div>
+    </div>
+
+    <script>
+      function SubmitEvent() {
+        var inputs = document.getElementsByTagName("input");
+        var strengthLabels = document.getElementsByClassName("strength");
+
+        for (var i = 0; i < inputs.length; i++) {
+          var input = inputs[i];
+          var strengthLabel = strengthLabels[i];
+
+          if (input.value.length >= 6) {
+            strengthLabel.textContent = "Good";
+            strengthLabel.classList.remove("poor");
+            strengthLabel.classList.add("good");
+          } else {
+            strengthLabel.textContent = "Poor";
+            strengthLabel.classList.remove("good");
+            strengthLabel.classList.add("poor");
+          }
+        }
+      }
+
+      function updateStrength(element) {
+        var strengthLabel = element.nextElementSibling.nextElementSibling;
+
+        if (element.checked) {
+          strengthLabel.textContent = "Good";
+          strengthLabel.classList.remove("poor");
+          strengthLabel.classList.add("good");
+        } else {
+          strengthLabel.textContent = "Poor";
+          strengthLabel.classList.remove("good");
+          strengthLabel.classList.add("poor");
+        }
+      }
+    </script>
+  </body>
+</html>

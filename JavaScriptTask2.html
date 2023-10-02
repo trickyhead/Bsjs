@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript String Sorter</title>
+    <style>
+      header {
+        background-color: #f0f0f0;
+        font-family: "Arial", sans-serif;
+        padding: 20px;
+        color: #333;
+      }
+      body {
+        background-color: #dcdcdc;
+        font-size: 18px;
+        padding: 20px;
+        color: #333;
+        margin-left: 30px;
+      }
+      input[type="text"] {
+        width: 160px;
+        padding: 6px;
+        font-size: 16px;
+        border: 2px solid lightblue;
+        margin-left: 12px;
+      }
+
+      input[type="button"] {
+        background-color: grey;
+        color: #fff;
+        border-radius: 8px;
+        border: none;
+        margin-left: 12px;
+        padding: 12px 24px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      #sorter {
+        padding-top: 3rem;
+        padding-left: 4rem;
+      }
+      #result {
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>String Sorting Tool</h1>
+    </header>
+    <form id="sorter">
+      <div>
+        <label for="inputString">Input String:</label>
+        <input
+          type="text"
+          id="inputString"
+          name="inputString"
+          placeholder="Type here"
+          required
+        />
+        <input type="button" value="Sort" onclick="performSort()" />
+      </div>
+    </form>
+    <p id="result"></p>
+    <script>
+      function performSort() {
+        var inputStr = document.getElementById("inputString").value;
+        const sortedStr = inputStr.split("").sort().join("");
+        document.getElementById("result").innerHTML =
+          "Sorted Text: " + sortedStr;
+      }
+    </script>
+  </body>
+</html>
